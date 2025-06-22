@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "latex-research-toolkit"
+version = "1.0.0"
+description = "Automated LaTeX compilation and research workflow"
+authors = [{name = "Research Team", email = "research@example.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0.0",
+    "pathlib2>=2.3.0; python_version<'3.4'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "mypy>=1.0.0", 
+    "black>=22.0.0",
+]
+scientific = [
+    "numpy>=1.24",
+    "scipy>=1.9", 
+    "matplotlib>=3.7",
+]
+
+[project.scripts]
+latex-compile = "tools.compile:main"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true

@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+
+% Basic setup
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{setspace}
+\onehalfspacing
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% Graphics and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Bibliography and references
+\usepackage[backend=biber,style=alphabetic,sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+% Hyperlinks (load last)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=red,
+    urlcolor=blue
+}
+
+% Custom macros
+\input{macros}
+
+% Document information
+\title{Research Paper Title}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This is the abstract of your research paper. Briefly describe the problem, methods, results, and conclusions. Keep it concise but informative, typically 150-250 words.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% MODULAR SECTIONS - Edit individual files in sections/ directory
+% This approach allows AI to focus on one section at a time
+
+% Uncomment to use modular sections:
+% \input{sections/introduction}
+% \input{sections/methodology}
+% \input{sections/results}
+% \input{sections/discussion}
+% \input{sections/conclusion}
+
+% For now, using simplified inline sections for demonstration:
+
+\section{Introduction}
+
+This is the introduction section. Here you should:
+\begin{itemize}
+    \item Introduce the research problem
+    \item Provide background and motivation
+    \item State your contributions
+    \item Outline the paper structure
+\end{itemize}
+
+You can use citations like this \cite{exampleref} and mathematical expressions like $f(x) = x^2 + 1$.
+
+\section{Literature Review}
+
+Discuss related work and how your research fits into the existing literature. Compare and contrast different approaches.
+
+\section{Methodology}
+
+Describe your research methods, experimental setup, or theoretical framework. Use mathematical notation when appropriate:
+
+\begin{equation}
+    \mathbb{E}[X] = \sum_{i=1}^{n} x_i P(X = x_i)
+\end{equation}
+
+You can also use the custom macros defined in `macros.tex`:
+- Real numbers: $\R$
+- Natural numbers: $\N$
+- Argmax operator: $\argmax_{x} f(x)$
+
+\section{Results}
+
+Present your findings here. Include tables and figures as needed:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Method & Accuracy & Runtime \\
+\midrule
+Algorithm A & 95.2\% & 10.3s \\
+Algorithm B & 92.8\% & 5.7s \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of different algorithms}
+\label{tab:results}
+\end{table}
+
+\section{Discussion}
+
+Interpret your results, discuss limitations, and suggest future work. You can reference tables like Table~\ref{tab:results}.
+
+\section{Conclusion}
+
+Summarize your main findings and contributions. Restate the significance of your work.
+
+% Examples of TODO and NOTE commands from macros.tex
+\todo{Remember to add more experimental results}
+\note{Consider discussing computational complexity}
+
+\printbibliography
+
+\end{document}
