@@ -1,0 +1,20 @@
+# Core dependencies for physics calculations
+numpy>=1.24
+scipy>=1.9
+matplotlib>=3.7
+
+# Development and quality tools
+ruff>=0.1.0          # Fast Python linter and formatter
+mypy>=1.0.0          # Static type checker
+black>=22.0.0        # Code formatter
+
+# Documentation and automation
+click>=8.0.0         # CLI interface for scripts
+pathlib2>=2.3.0     # Enhanced path handling (if needed for older Python)
+
+# Optional: For advanced LaTeX processing
+# pygments>=2.10.0   # Syntax highlighting
+# jinja2>=3.0.0      # Template engine for reports 
+
+classy>=2.9.4
+tqdm>=4.64 
